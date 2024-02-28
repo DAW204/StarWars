@@ -136,7 +136,7 @@ function aplicarEstilosCartas() {
     $(".figura").css({
         "border-radius": "20px",
         "width": "75%",
-        "height": "250px",
+        "height": "210px",
         "margin-top": "15%",
         "margin-left": "10%",
         "margin-bottom": "10%",
