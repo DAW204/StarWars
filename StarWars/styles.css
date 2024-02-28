@@ -1,0 +1,237 @@
+body {
+  font-family: "Star Wars Font", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("images/otros/bg.png");
+  background-size: cover;
+}
+
+@font-face {
+  font-family: 'Star Wars Font';
+  src: url('fuente/STARWARS.ttf') format('truetype');
+}
+
+p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* Prefijos de proveedores para 'perspective' */
+#container {
+  perspective: 1200px; /* Agregué 'px' para mayor claridad */
+  -webkit-perspective: 1200px; /* Prefijo para Safari/Chrome */
+}
+/* Propiedad 'box-shadow' con prefijos */
+.figura {
+  -webkit-box-shadow: 40px 40px 40px 5px rgba(0, 0, 0, 0.6);
+  box-shadow: 40px 40px 40px 5px rgba(0, 0, 0, 0.6);
+}
+/* Propiedad 'transition' con prefijos */
+.carta {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* Propiedad 'display: grid' con prefijos */
+.mainContainer {
+  display: -ms-grid; /* Prefijo para Edge */
+  display: grid;
+  -ms-grid-columns: 70% 30%;
+      grid-template-columns: 70% 30%;
+}
+#container {
+  width: 100%;
+  min-height: 80vh; ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  perspective: 1200;
+}
+
+.carta {
+  width: 15%;
+  max-width: 200px; /* Máximo ancho */
+  height: auto;
+  background-image: url("images/otros/card_bg.jpg");
+  border: 2px solid;
+  border-radius: 25px;
+  margin-right: 2%;
+}
+
+
+.figura {
+  box-shadow: 40px 40px 40px 5px rgba(0, 0, 0, 0.6);
+}
+
+h2 {
+  text-align: center;
+  margin-top: 10%;
+  font-size: x-large;
+}
+
+.section h2  {
+  text-align: center;
+  margin-top: 3%;
+  font-size: 14px;
+}
+/*CHECKS  */
+.containerChecks {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.checks label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border: 2px solid #FFEB3B;
+  border-radius: 3px;
+}
+
+.checks input[type="checkbox"] {
+  display: none;
+}
+
+.checks label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  color: #FFEB3B;
+}
+
+.checks input[type="checkbox"]:checked+label:before {
+  background-color: #d4922f;
+}
+
+.checks label i {
+  position: absolute;
+  top: 25%;
+  left: 5px;
+  transform: translateY(-50%);
+
+}
+
+.carta {
+  cursor: pointer;
+  align-items: center;
+  box-shadow: 0 0px 30px rgba(255, 215, 0, 0.8);
+}
+
+.checks {
+  display: flex;
+  margin-bottom: 5%;
+}
+
+.bloque {
+  width: 50%;
+}
+
+/* Alinea el primer bloque a la izquierda y el segundo bloque a la derecha */
+.bloque:first-child {
+  float: left;
+}
+
+.bloque:last-child {
+  float: right;
+}
+
+/*FIN CHECKS*/
+
+
+/* Agrega espacio entre los bloques */
+.checks::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* LLUVIA DE ESTRELLAS */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  width: 1px;
+  height: 1px;
+  animation: twinkle linear infinite;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/*Card info*/
+.cardinfo {
+  width: 90%;
+  margin-left: 5%;
+  background-image: url("images/otros/card_bg.jpg");
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(255, 235, 59, 0.5), 0 0 20px rgba(255, 235, 59, 0.5);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  margin-top: 0;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #FFEB3B;
+}
+
+.carta {
+  position: absolute;
+  display: block;
+  transition: 0.5s;
+  transform-origin: bottom center;
+  justify-content: center;
+}
+
+.mainContainer {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+/* Media query para hacerlo responsive */
+@media (max-width: 1200px) {
+  /* Modifica el tamaño de las cartas para pantallas pequeñas */
+  .carta {
+    width: 40%;
+    max-width: 150px;
+    margin-right: 1%; /* Espacio entre cartas */
+  }
+  #container {
+  width: 100%;
+  min-height: 80vh; ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  perspective: 1200;
+}
+}
