@@ -18,14 +18,18 @@ p {
 
 /* Prefijos de proveedores para 'perspective' */
 #container {
-  perspective: 1200px; /* Agregué 'px' para mayor claridad */
-  -webkit-perspective: 1200px; /* Prefijo para Safari/Chrome */
+  perspective: 1200px;
+  /* Agregué 'px' para mayor claridad */
+  -webkit-perspective: 1200px;
+  /* Prefijo para Safari/Chrome */
 }
+
 /* Propiedad 'box-shadow' con prefijos */
 .figura {
   -webkit-box-shadow: 40px 40px 40px 5px rgba(0, 0, 0, 0.6);
   box-shadow: 40px 40px 40px 5px rgba(0, 0, 0, 0.6);
 }
+
 /* Propiedad 'transition' con prefijos */
 .carta {
   -webkit-transition: 0.5s;
@@ -34,14 +38,17 @@ p {
 
 /* Propiedad 'display: grid' con prefijos */
 .mainContainer {
-  display: -ms-grid; /* Prefijo para Edge */
+  display: -ms-grid;
+  /* Prefijo para Edge */
   display: grid;
   -ms-grid-columns: 70% 30%;
-      grid-template-columns: 70% 30%;
+  grid-template-columns: 70% 30%;
 }
+
 #container {
   width: 100%;
-  min-height: 80vh; ;
+  min-height: 80vh;
+  ;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +58,8 @@ p {
 
 .carta {
   width: 15%;
-  max-width: 200px; /* Máximo ancho */
+  max-width: 200px;
+  /* Máximo ancho */
   height: auto;
   background-image: url("images/otros/card_bg.jpg");
   border: 2px solid;
@@ -70,11 +78,12 @@ h2 {
   font-size: x-large;
 }
 
-.section h2  {
+.section h2 {
   text-align: center;
   margin-top: 3%;
   font-size: 14px;
 }
+
 /*CHECKS  */
 .containerChecks {
   max-width: 800px;
@@ -218,20 +227,28 @@ h2 {
 }
 
 /* Media query para hacerlo responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1650px) {
+
   /* Modifica el tamaño de las cartas para pantallas pequeñas */
   .carta {
     width: 40%;
     max-width: 150px;
-    margin-right: 1%; /* Espacio entre cartas */
+    margin-right: 1%;
+    /* Espacio entre cartas */
   }
+
   #container {
-  width: 100%;
-  min-height: 80vh; ;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  perspective: 1200;
-}
+    width: 100%;
+    min-height: 80vh;
+    ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    perspective: 1200;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
 }
