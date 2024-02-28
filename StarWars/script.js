@@ -240,17 +240,16 @@ function consultarDatos() {
         } else {
             selectedCharacter = characterName;
             var apiUrl = `https://swapi.dev/api/people/?search=${characterName}&format=json`;
-            console.log(apiUrl)
             $.get(apiUrl, function (data) {
                 if (data && data.results && data.results.length > 0) {
                     var character = data.results[0];
                     characterData[characterName] = character;
                     obtenerInformacion(character);
                 } else {
-                    console.log('Error: No se encuentra información del personaje');
+                    console.log('Error: No es posible encontrar información');
                 }
             }).fail(function () {
-                console.log('Error: No se pudo recuperar datos de personajes');
+                console.log('Error: No se pudieron recuperar los datos');
             });
         }
     });
